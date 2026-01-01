@@ -62,10 +62,10 @@ const Portfolio: React.FC = () => {
     return (
         <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'}`}>
             {/* Navigation */}
-            <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled 
-                ? darkMode 
-                    ? 'bg-gray-900/95 backdrop-blur-sm shadow-lg' 
-                    : 'bg-white/95 backdrop-blur-sm shadow-lg' 
+            <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled
+                ? darkMode
+                    ? 'bg-gray-900/95 backdrop-blur-sm shadow-lg'
+                    : 'bg-white/95 backdrop-blur-sm shadow-lg'
                 : 'bg-transparent'
                 }`}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
@@ -74,9 +74,9 @@ const Portfolio: React.FC = () => {
                             onClick={() => scrollToSection('home')}
                             className="h-10 w-10 sm:h-12 sm:w-12 overflow-hidden hover:opacity-80 transition-opacity"
                         >
-                            <img 
-                                src={logo} 
-                                alt="Logo" 
+                            <img
+                                src={logo}
+                                alt="Logo"
                                 className="w-full h-full object-contain"
                             />
                         </button>
@@ -87,10 +87,9 @@ const Portfolio: React.FC = () => {
                                 <button
                                     key={section}
                                     onClick={() => scrollToSection(section)}
-                                    className={`relative text-xs lg:text-sm font-medium uppercase tracking-widest transition-colors group ${
-                                        activeSection === section 
-                                            ? darkMode ? 'text-gray-400' : 'text-gray-900'
-                                            : darkMode ? 'text-gray-400' : 'text-gray-500'
+                                    className={`relative text-xs lg:text-sm font-medium uppercase tracking-widest transition-colors group ${activeSection === section
+                                        ? darkMode ? 'text-gray-400' : 'text-gray-900'
+                                        : darkMode ? 'text-gray-400' : 'text-gray-500'
                                         }`}
                                 >
                                     {section}
@@ -132,10 +131,9 @@ const Portfolio: React.FC = () => {
                                 <button
                                     key={section}
                                     onClick={() => scrollToSection(section)}
-                                    className={`block w-full text-left px-4 py-3 text-sm font-medium uppercase tracking-widest transition-colors ${
-                                        activeSection === section 
-                                            ? darkMode ? 'text-gray-400 bg-gray-800' : 'text-gray-900 bg-gray-100'
-                                            : darkMode ? 'text-gray-400' : 'text-gray-500'
+                                    className={`block w-full text-left px-4 py-3 text-sm font-medium uppercase tracking-widest transition-colors ${activeSection === section
+                                        ? darkMode ? 'text-gray-400 bg-gray-800' : 'text-gray-900 bg-gray-100'
+                                        : darkMode ? 'text-gray-400' : 'text-gray-500'
                                         }`}
                                 >
                                     {section}
@@ -147,17 +145,53 @@ const Portfolio: React.FC = () => {
             </nav>
 
             {/* Home Section */}
+
             <section id="home" className="min-h-screen flex items-center relative overflow-hidden pt-16 sm:pt-0">
                 <div className="absolute inset-0 opacity-5">
                     <div className="absolute inset-0" style={{
                         backgroundImage: `repeating-linear-gradient(0deg, ${darkMode ? '#60a5fa' : '#000'} 0px, ${darkMode ? '#60a5fa' : '#000'} 1px, transparent 1px, transparent 40px),
-                             repeating-linear-gradient(90deg, ${darkMode ? '#60a5fa' : '#000'} 0px, ${darkMode ? '#60a5fa' : '#000'} 1px, transparent 1px, transparent 40px)`
+                 repeating-linear-gradient(90deg, ${darkMode ? '#60a5fa' : '#000'} 0px, ${darkMode ? '#60a5fa' : '#000'} 1px, transparent 1px, transparent 40px)`
                     }}></div>
                 </div>
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-12 sm:py-20 relative z-10">
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
-                        <div className="lg:col-span-7 text-center lg:text-left">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-12 items-center">
+
+                        {/* Image Section - Shows FIRST on mobile, SECOND on desktop */}
+                        <div className="lg:col-span-5 flex justify-center order-1 lg:order-2">
+                            <div className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-115 lg:h-115">
+                                {/* Rotating text circle - NOW VISIBLE ON MOBILE */}
+                                <svg className="absolute inset-0 w-full h-full animate-spin" style={{ animationDuration: '20s' }} viewBox="0 0 100 100">
+                                    <path
+                                        id="circlePath"
+                                        d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
+                                        fill="none"
+                                    />
+                                    <text className={`text-[4px] font-bold uppercase tracking-widest ${darkMode ? 'fill-gray-400' : 'fill-gray-900'}`}>
+                                        <textPath href="#circlePath">
+                                            WEB DEVELOPER • AI/ML ENTHUSIAST • CREATOR • INNOVATOR • PROBLEM SOLVER • LEARNER
+                                        </textPath>
+                                    </text>
+                                </svg>
+
+                                {/* Circular profile image */}
+                                <div className="absolute inset-0 flex items-center justify-center">
+                                    <div className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-72 lg:h-72">
+                                        <div className={`absolute inset-0 rounded-full ${darkMode ? 'bg-linear-to-br from-gray-500 to-purple-600' : 'bg-linear-to-br from-gray-700 to-gray-900'} opacity-20 blur-xl`}></div>
+                                        <div className={`relative w-full h-full rounded-full overflow-hidden border-4 ${darkMode ? 'border-gray-400' : 'border-gray-900'} ${darkMode ? 'bg-gray-800' : 'bg-gray-100'}`}>
+                                            <img
+                                                src={image}
+                                                alt={portfolioData.personal.name}
+                                                className="w-full h-full object-cover"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Text Section - Shows SECOND on mobile, FIRST on desktop */}
+                        <div className="lg:col-span-7 text-center lg:text-left order-2 lg:order-1">
                             <div className={`inline-block mb-4 sm:mb-6 px-3 sm:px-4 py-1.5 sm:py-2 border-2 ${darkMode ? 'border-gray-400' : 'border-gray-900'}`}>
                                 <p className="text-xs font-bold uppercase tracking-widest">Available for Work</p>
                             </div>
@@ -206,37 +240,6 @@ const Portfolio: React.FC = () => {
                             </div>
                         </div>
 
-                        <div className="lg:col-span-5 flex justify-center mt-8 lg:mt-0">
-                            <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-112.5 lg:h-112.5">
-                                {/* Rotating text circle */}
-                                <svg className="absolute inset-0 w-full h-full animate-spin hidden sm:block" style={{ animationDuration: '20s' }} viewBox="0 0 100 100">
-                                    <path
-                                        id="circlePath"
-                                        d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
-                                        fill="none"
-                                    />
-                                    <text className={`text-[4px] font-bold uppercase tracking-widest ${darkMode ? 'fill-gray-400' : 'fill-gray-900'}`}>
-                                        <textPath href="#circlePath">
-                                            WEB DEVELOPER • AI/ML ENTHUSIAST • CREATOR • INNOVATOR • PROBLEM SOLVER • LEARNER
-                                        </textPath>
-                                    </text>
-                                </svg>
-                                
-                                {/* Circular profile image */}
-                                <div className="absolute inset-0 flex items-center justify-center">
-                                    <div className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-72 lg:h-72">
-                                        <div className={`absolute inset-0 rounded-full ${darkMode ? 'bg-linear-to-br from-gray-500 to-purple-600' : 'bg-linear-to-br from-gray-700 to-gray-900'} opacity-20 blur-xl`}></div>
-                                        <div className={`relative w-full h-full rounded-full overflow-hidden border-4 ${darkMode ? 'border-gray-400' : 'border-gray-900'} ${darkMode ? 'bg-gray-800' : 'bg-gray-100'}`}>
-                                            <img 
-                                                src={image} 
-                                                alt={portfolioData.personal.name}
-                                                className="w-full h-full object-cover"
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </section>
@@ -343,23 +346,24 @@ const Portfolio: React.FC = () => {
                                                 <div className={`h-1 w-12 sm:w-16 ${darkMode ? 'bg-gray-400' : 'bg-gray-300'} mx-auto`}></div>
                                             </div>
                                         )}
-                                        <div className={`absolute inset-0 ${darkMode ? 'bg-gray-500' : 'bg-gray-900'} opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex items-center justify-center gap-4`}>
+                                        {/* Desktop hover overlay - hidden on mobile */}
+                                        <div className={`hidden md:flex absolute inset-0 ${darkMode ? 'bg-gray-500' : 'bg-gray-900'} opacity-0 group-hover:opacity-90 transition-opacity duration-300 items-center justify-center gap-4`}>
                                             <a
                                                 href={project.github}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className={`w-10 h-10 sm:w-12 sm:h-12 ${darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'} flex items-center justify-center hover:scale-110 transition-transform`}
+                                                className={`w-12 h-12 ${darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'} flex items-center justify-center hover:scale-110 transition-transform`}
                                             >
-                                                <FaGithub size={18} className="sm:w-5 sm:h-5" />
+                                                <FaGithub size={20} />
                                             </a>
                                             {project.live && (
                                                 <a
                                                     href={project.live}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
-                                                    className={`w-10 h-10 sm:w-12 sm:h-12 ${darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'} flex items-center justify-center hover:scale-110 transition-transform`}
+                                                    className={`w-12 h-12 ${darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'} flex items-center justify-center hover:scale-110 transition-transform`}
                                                 >
-                                                    <RiExternalLinkLine size={18} className="sm:w-5 sm:h-5" />
+                                                    <RiExternalLinkLine size={20} />
                                                 </a>
                                             )}
                                         </div>
@@ -371,12 +375,36 @@ const Portfolio: React.FC = () => {
                                             {project.description}
                                         </p>
 
-                                        <div className="flex flex-wrap gap-2">
+                                        <div className="flex flex-wrap gap-2 mb-4">
                                             {project.technologies.map((tech: string, i: number) => (
                                                 <span key={i} className={`text-xs px-2.5 sm:px-3 py-1 border ${darkMode ? 'border-gray-400 text-white hover:bg-gray-400 hover:text-gray-900' : 'border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white'} font-semibold uppercase tracking-wider transition-colors`}>
                                                     {tech}
                                                 </span>
                                             ))}
+                                        </div>
+
+                                        {/* Mobile buttons - visible only on mobile */}
+                                        <div className="flex md:hidden gap-3">
+                                            <a
+                                                href={project.github}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className={`flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 border-2 ${darkMode ? 'border-gray-400 text-gray-400 hover:bg-gray-400 hover:text-gray-900' : 'border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white'} transition-all duration-300`}
+                                            >
+                                                <FaGithub size={16} />
+                                                <span className="text-xs font-semibold uppercase">GitHub</span>
+                                            </a>
+                                            {project.live && (
+                                                <a
+                                                    href={project.live}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className={`flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 ${darkMode ? 'bg-gray-200 text-black hover:bg-gray-600' : 'bg-black text-white hover:bg-gray-800'} transition-all duration-300`}
+                                                >
+                                                    <RiExternalLinkLine size={16} />
+                                                    <span className="text-xs font-semibold uppercase">Live Demo</span>
+                                                </a>
+                                            )}
                                         </div>
                                     </div>
                                 </div>
