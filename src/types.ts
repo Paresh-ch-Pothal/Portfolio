@@ -43,11 +43,22 @@ export interface Project {
     image: string | null;
 }
 
+export interface Experience {
+    id: number;
+    role: string;
+    company: string;
+    duration: string;
+    location: string;
+    description: string;
+    responsibilities: string[]
+}
+
 export interface PortfolioData {
     personal: PersonalInfo;
     social: SocialLinks;
     skills: Skill[];
     timeline: TimelineItem[];
     projects: Project[];
+    experiences: Experience[];
 }
 

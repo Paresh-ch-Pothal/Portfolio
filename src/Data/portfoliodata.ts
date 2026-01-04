@@ -50,14 +50,24 @@ export const portfolioData: PortfolioData = {
     { category: "Core Competencies", items: ["Data Structures", "Algorithms", "Full-Stack Development", "Problem Solving"], progress: 90 }
   ],
 
+  experiences: [
+    {
+      id: 1,
+      role: "React Development Intern",
+      company: "AceHours",
+      duration: "July 2025 - September 2025",
+      location: "Remote",
+      description: "Working on a team of 7+ members focusing on API development and frontend tech stack. Collaborating on building scalable React applications with modern development practices.",
+      responsibilities: [
+        "Developed responsive UI components using React.js and Tailwind CSS",
+        "Collaborated with backend team for seamless API integration",
+        "Participated in code reviews and agile development processes"
+      ]
+    }
+  ],
+
 
   timeline: [
-    {
-      year: "2025",
-      title: "React Development Intern",
-      company: "AceHours",
-      description: "Worked on a team of 7+ members focusing on API development and frontend tech stack."
-    },
     {
       year: "2025",
       title: "AI/ML Enthusiast",
@@ -79,6 +89,8 @@ export const portfolioData: PortfolioData = {
   ],
 
 
+
+
   projects: [
     // First four projects with ids 1, 2, 3, and 4
     {
@@ -86,7 +98,7 @@ export const portfolioData: PortfolioData = {
       title: "AI Text Detection",
       description: "The AI Text Detection Model distinguishes between AI-generated and human-written text using features like word length, stopword ratio, and perplexity. With an AUC-ROC score of 0.94, it demonstrates high accuracy. Future work includes expanding features and fine-tuning for improved performance.",
       image: null,
-      technologies:['python','Scikit-Learn','Pandas','Numpy','Transformers','BERT','XgBoost','Perflexity'],
+      technologies: ['python', 'Scikit-Learn', 'Pandas', 'Numpy', 'Transformers', 'BERT', 'XgBoost', 'Perflexity'],
       github: "https://github.com/Paresh-ch-Pothal/AI-Text-Detection",
       live: null
     },

@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
-import { RiFileTextLine, RiMailLine, RiMapPinLine, RiExternalLinkLine, RiCodeSSlashLine, RiTerminalLine, RiBriefcaseLine, RiMenuLine, RiCloseLine } from 'react-icons/ri';
+import { RiFileTextLine, RiMailLine, RiMapPinLine, RiExternalLinkLine, RiCodeSSlashLine, RiTerminalLine, RiBriefcaseLine, RiMenuLine, RiCloseLine, RiBuilding4Line, RiCalendarLine } from 'react-icons/ri';
 import { SiGeeksforgeeks, SiLeetcode } from 'react-icons/si';
 import logo from '../../public/logo/PortfolioLogo.png';
 import type { Project, Skill } from '../types';
@@ -316,6 +316,77 @@ const Portfolio: React.FC = () => {
                                 </div>
                             ))}
                         </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="experience" className={`min-h-screen flex items-center ${darkMode ? 'bg-gray-900' : 'bg-white'}`}>
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-12 sm:py-20">
+                    <div className="mb-12 sm:mb-16">
+                        <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+                            <RiBriefcaseLine size={24} className={`sm:w-8 sm:h-8 ${darkMode ? 'text-gray-400' : 'text-gray-900'}`} />
+                            <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold uppercase tracking-tight">Experience</h2>
+                        </div>
+                        <div className={`h-1 w-16 sm:w-24 ${darkMode ? 'bg-gray-400' : 'bg-gray-900'}`}></div>
+                    </div>
+
+                    <div className="space-y-8 sm:space-y-12">
+                        {portfolioData.experiences.map((exp, _) => (
+                            <div key={exp.id} className="group">
+                                <div className={`border-2 ${darkMode ? 'border-gray-700 hover:border-gray-500' : 'border-gray-900 hover:border-gray-700'} transition-all duration-300 transform hover:-translate-y-1`}>
+                                    <div className={`p-6 sm:p-8 ${darkMode ? 'bg-gray-900' : 'bg-white'}`}>
+                                        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4 sm:mb-6">
+                                            <div className="flex-1 mb-4 lg:mb-0">
+                                                <h3 className="text-2xl sm:text-3xl font-bold mb-2">{exp.role}</h3>
+                                                <div className="flex items-center gap-2 mb-2">
+                                                    <RiBuilding4Line size={18} className={darkMode ? 'text-gray-400' : 'text-gray-600'} />
+                                                    <span className={`text-base sm:text-lg font-semibold ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                                                        {exp.company}
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                                                <div className={`flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 border ${darkMode ? 'border-gray-400' : 'border-gray-900'}`}>
+                                                    <RiCalendarLine size={16} />
+                                                    <span className="text-xs sm:text-sm font-semibold uppercase tracking-wider">
+                                                        {exp.duration}
+                                                    </span>
+                                                </div>
+                                                <div className={`flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 border ${darkMode ? 'border-gray-400' : 'border-gray-900'}`}>
+                                                    <RiMapPinLine size={16} />
+                                                    <span className="text-xs sm:text-sm font-semibold uppercase tracking-wider">
+                                                        {exp.location}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <p className={`text-base sm:text-lg ${darkMode ? 'text-gray-300' : 'text-gray-700'} mb-6 leading-relaxed`}>
+                                            {exp.description}
+                                        </p>
+
+                                        <div className={`border-t-2 ${darkMode ? 'border-gray-800' : 'border-gray-100'} pt-6`}>
+                                            <h4 className="text-sm font-bold uppercase tracking-widest mb-4 flex items-center gap-2">
+                                                <span className={`w-2 h-2 ${darkMode ? 'bg-gray-400' : 'bg-gray-900'}`}></span>
+                                                Key Responsibilities
+                                            </h4>
+                                            <ul className="space-y-3">
+                                                {exp.responsibilities.map((responsibility, idx) => (
+                                                    <li key={idx} className="flex items-start gap-3">
+                                                        <div className={`w-1.5 h-1.5 ${darkMode ? 'bg-gray-400' : 'bg-gray-900'} mt-2 shrink-0`}></div>
+                                                        <span className={`text-sm sm:text-base ${darkMode ? 'text-gray-300' : 'text-gray-600'} leading-relaxed`}>
+                                                            {responsibility}
+                                                        </span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
