@@ -67,8 +67,8 @@ export const portfolioData: PortfolioData = {
     {
       id: 2,
       role: "Computer Science Instructor (CBSE Class 12)",
-      company: "JJ Classes",
-      duration: "December 2024 - January 2025",
+      company: "JJ Institute Of Science",
+      duration: "December 2025 - January 2026",
       location: "On-site",
       description: "Taught CBSE Class 12 students core computer science subjects with a focus on conceptual clarity and exam-oriented preparation.",
       responsibilities: [
