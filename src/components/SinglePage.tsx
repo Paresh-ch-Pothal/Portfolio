@@ -37,7 +37,7 @@ const Portfolio: React.FC = () => {
         const handleScroll = (): void => {
             setScrolled(window.scrollY > 50);
 
-            const sections = ['home', 'about', 'projects', 'contact'];
+            const sections = ['home', 'about','experience', 'projects', 'contact'];
             const current = sections.find((section) => {
                 const element = document.getElementById(section);
                 if (element) {
@@ -83,7 +83,7 @@ const Portfolio: React.FC = () => {
 
                         {/* Desktop Navigation */}
                         <div className="hidden md:flex gap-6 lg:gap-8 items-center">
-                            {['home', 'about', 'projects', 'contact'].map((section) => (
+                            {['home', 'about','experience', 'projects', 'contact'].map((section) => (
                                 <button
                                     key={section}
                                     onClick={() => scrollToSection(section)}

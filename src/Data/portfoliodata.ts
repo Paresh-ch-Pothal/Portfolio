@@ -63,6 +63,20 @@ export const portfolioData: PortfolioData = {
         "Collaborated with backend team for seamless API integration",
         "Participated in code reviews and agile development processes"
       ]
+    },
+    {
+      id: 2,
+      role: "Computer Science Instructor (CBSE Class 12)",
+      company: "JJ Classes",
+      duration: "December 2024 - January 2025",
+      location: "On-site",
+      description: "Taught CBSE Class 12 students core computer science subjects with a focus on conceptual clarity and exam-oriented preparation.",
+      responsibilities: [
+        "Taught Java, Python, and SQL to Class 12 CBSE students",
+        "Explained programming concepts using real-world examples",
+        "Helped students prepare for board exams and practical assessments",
+        "Provided doubt-solving sessions and personalized guidance"
+      ]
     }
   ],
 
