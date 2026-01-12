@@ -38,7 +38,7 @@ export const portfolioData: PortfolioData = {
     twitter: "https://x.com/Paresh_Pothal",
     leetcode: "https://leetcode.com/u/pareshchandrapothal44/",
     gfg: "https://www.geeksforgeeks.org/profile/pareshchanduhie",
-    resume: "https://www.dropbox.com/scl/fi/ty5wkxzgitbqvt59aw6sq/Resume_1.pdf?rlkey=fks7yfx1zpmfpgqa1vc3al1re&st=vtjbxr8l&dl=0"
+    resume: "https://www.dropbox.com/scl/fi/g1b5acfkwu1sg1ggm5gud/Resume_1-2.pdf?rlkey=0f70u9hf2wpd1jtzozg2wsp1o&st=2uz2ho95&dl=0"
   },
 
   skills: [
