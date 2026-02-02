@@ -6,7 +6,9 @@ import { SiGeeksforgeeks, SiLeetcode } from 'react-icons/si';
 import logo from '../../public/logo/PortfolioLogo.png';
 import type { Project, Skill } from '../types';
 import { portfolioData } from '../Data/portfoliodata';
-import image from '../assets/image.png';
+// import image from '../assets/image.png';
+import profileImage from '../assets/profileImage.jpeg'
+
 
 interface SocialIconProps {
     href: string;
@@ -180,7 +182,7 @@ const Portfolio: React.FC = () => {
                                         <div className={`absolute inset-0 rounded-full ${darkMode ? 'bg-linear-to-br from-gray-500 to-purple-600' : 'bg-linear-to-br from-gray-700 to-gray-900'} opacity-20 blur-xl`}></div>
                                         <div className={`relative w-full h-full rounded-full overflow-hidden border-4 ${darkMode ? 'border-gray-400' : 'border-gray-900'} ${darkMode ? 'bg-gray-800' : 'bg-gray-100'}`}>
                                             <img
-                                                src={image}
+                                                src={profileImage}
                                                 alt={portfolioData.personal.name}
                                                 className="w-full h-full object-cover"
                                             />
