@@ -52,6 +52,23 @@ export interface Experience {
     description: string;
     responsibilities: string[]
 }
+export interface Achievement {
+    id: number;
+    title: string;
+    description: string;
+    date?: string;
+    organization?: string;
+}
+
+export interface Certification {
+    id: number;
+    title: string;
+    issuer: string;
+    date: string;
+    credentialUrl?: string;
+    credentialId?: string;
+    image?: string; // optional badge/logo
+}
 
 export interface PortfolioData {
     personal: PersonalInfo;
@@ -60,5 +77,9 @@ export interface PortfolioData {
     timeline: TimelineItem[];
     projects: Project[];
     experiences: Experience[];
+    achievements: Achievement[];
+    certifications: Certification[]
 }
+
+
 

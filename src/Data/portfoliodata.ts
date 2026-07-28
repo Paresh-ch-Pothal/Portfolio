@@ -17,6 +17,8 @@ import sc18 from '../assets/projectImages/sc18.png';
 import sc19 from '../assets/projectImages/sc19.png';
 import sc20 from '../assets/projectImages/sc20.png';
 import sc21 from '../assets/projectImages/sc21.png';
+import sc22 from '../assets/projectImages/sc22.png';
+import sc23 from '../assets/projectImages/sc23.png';
 
 
 
@@ -77,11 +79,31 @@ export const portfolioData: PortfolioData = {
         "Helped students prepare for board exams and practical assessments",
         "Provided doubt-solving sessions and personalized guidance"
       ]
+    },
+    {
+      id: 3,
+      role: "Computer Science Instructor (CBSE Class 11)",
+      company: "JJ Institute Of Science",
+      duration: "June 2026 - July 2026",
+      location: "On-site",
+      description: "Delivered comprehensive Computer Science instruction to CBSE Class 11 students, emphasizing foundational programming logic and academic excellence.",
+      responsibilities: [
+        "Instructed students in core Python programming, syntax, and data structures.",
+        "Simplified complex coding concepts using real-world analogies.",
+        "Conducted targeted preparation for theoretical exams and practical assessments.",
+        "Provided personalized mentorship and interactive doubt-solving sessions."
+      ]
     }
   ],
 
 
   timeline: [
+    {
+      year: "2026",
+      title: "Generative AI Developer",
+      company: "",
+      description: "Developed multiple RAG-based applications, including an AI Legal Assistant and a YouTube chatbot."
+    },
     {
       year: "2025",
       title: "AI/ML Enthusiast",
@@ -106,7 +128,42 @@ export const portfolioData: PortfolioData = {
 
 
   projects: [
-    // First four projects with ids 1, 2, 3, and 4
+    {
+      "id": -4,
+      "title": "Legal AI Research Assistant",
+      "description": "A domain-specific Retrieval-Augmented Generation (RAG) platform customized for Indian legal contexts. Developed an end-to-end ingestion pipeline utilizing OCR for scanned documents, chunking text via InLegalBERT embeddings, and indexing them into a ChromaDB vector store. Orchestrated a LangChain pipeline with Google Gemini to provide grounded Q&A with direct citations, featuring an independent web search module and a dynamic PDF report generator via ReportLab.",
+      "image": null,
+      "technologies": ["Python", "Streamlit", "LangChain", "Gemini API", "ChromaDB", "InLegalBERT", "ReportLab", "DuckDuckGo API"],
+      "github": "https://github.com/Paresh-ch-Pothal/Legal-AI-Assistant",
+      "live": null
+    },
+    {
+      "id": -3,
+      "title": "AskTube: AI YouTube Chatbot",
+      "description": "An interactive knowledge exploration platform that transforms passive video watching into an active Q&A experience. Built a Retrieval-Augmented Generation (RAG) pipeline to chunk and process YouTube transcripts, generating vector embeddings stored in a FAISS database. Utilized LangChain to orchestrate semantic similarity searches and leverage the Gemini API for context-aware, precise responses.",
+      "image": null,
+      "technologies": ["Python", "Streamlit", "LangChain", "Gemini API", "FAISS", "Vector Embeddings", "YouTube Transcript API"],
+      "github": "https://github.com/Paresh-ch-Pothal/AskTube",
+      "live": null
+    },
+    {
+      "id": -2,
+      "title": "Finance Dashboard Backend",
+      "description": "A production-ready, secure backend server for financial record management featuring a robust Role-Based Access Control (RBAC) system for Admin, Analyst, and Viewer profiles. Integrated JWT authentication, Express Validator for input filtering, and rate-limiting middleware to prevent API abuse. Fully documented using Swagger API and optimized for enterprise-grade maintainability.",
+      "image": sc22,
+      "technologies": ["Node.js", "TypeScript", "Express.js", "MongoDB", "Mongoose", "JWT", "Swagger", "Render"],
+      "github": "https://github.com/Paresh-ch-Pothal/Finance-Dashboard-Backend",
+      "live": "https://finance-dashboard-awg3.onrender.com/api-docs/"
+    },
+    {
+      "id": -1,
+      "title": "Community Feed with Gamification",
+      "description": "A full-stack social platform featuring an unlimited-depth nested comment tree and a real-time gamification engine. Implemented a 24-hour rolling leaderboard calculating user ranking based on dynamic karma point assignment. Built with a hybrid database architecture that automatically toggles between PostgreSQL for production and SQLite for local development.",
+      "image": sc23,
+      "technologies": ["React", "TypeScript", "Vite", "Tailwind CSS", "Python", "Django", "Django REST Framework", "PostgreSQL", "SQLite"],
+      "github": "https://github.com/Paresh-ch-Pothal/Community-Feed",
+      "live": "https://community-feed-theta.vercel.app"
+    },
     {
       id: 0,
       title: "AI Text Detection",
@@ -280,5 +337,52 @@ export const portfolioData: PortfolioData = {
       live: null,
       image: sc8
     }
+  ],
+
+  achievements: [
+    {
+      "id": 1,
+      "title": "Amazon ML Hackathon (Rank: 2316)",
+      "organization": "Amazon",
+      "date": "2025",
+      "description": "Engineered a multimodal e-commerce price prediction model utilizing CLIP for image embeddings and BERT for text processing. Combined features into an optimized XGBoost model to achieve a 52.024 SMAPE score on large-scale datasets."
+    },
+    {
+      "id": 2,
+      "title": "D3 Hackathon Finalist",
+      "organization": "IIIT Bhubaneswar",
+      "date": "2024",
+      "description": "Developed an institutional inventory management system to stream-line tracking of official files and assets, significantly improving resource optimization."
+    },
+    {
+      "id": 3,
+      "title": "Nirman Hackathon Finalist",
+      "organization": "Silicon University, Odisha",
+      "date": "2025",
+      "description": "Developed a real-time disease prediction and cost-optimization platform to lower healthcare barriers. Features include nearest-hospital mapping and a medicine price-comparison engine designed to minimize out-of-pocket patient costs."
+    }
+  ],
+
+  certifications: [
+    {
+      id: 1,
+      title: "GeeksForGeeks 160 Days Coding Challenge",
+      issuer: "GeeksForGeeks",
+      date: "2025"
+    },
+    {
+      id: 2,
+      title: "AIML for Geo Data Analysis",
+      issuer: "IIRS",
+      date: "2024"
+    },
+    {
+      id: 3,
+      title: "LOR - GeetRam Holdings",
+      issuer: "GeetRam Holdings",
+      date: "2025"
+      // no credentialUrl — tests "no button" state
+    },
+
   ]
 };

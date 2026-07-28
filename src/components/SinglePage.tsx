@@ -1,10 +1,10 @@
 
 import React, { useState, useEffect } from 'react';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
-import { RiFileTextLine, RiMailLine, RiMapPinLine, RiExternalLinkLine, RiCodeSSlashLine, RiTerminalLine, RiBriefcaseLine, RiMenuLine, RiCloseLine, RiBuilding4Line, RiCalendarLine } from 'react-icons/ri';
+import { RiFileTextLine, RiMailLine, RiMapPinLine, RiExternalLinkLine, RiCodeSSlashLine, RiTerminalLine, RiBriefcaseLine, RiMenuLine, RiCloseLine, RiBuilding4Line, RiCalendarLine, RiAwardLine, RiVerifiedBadgeLine } from 'react-icons/ri';
 import { SiGeeksforgeeks, SiLeetcode } from 'react-icons/si';
 import logo from '../../public/logo/PortfolioLogo.png';
-import type { Project, Skill } from '../types';
+import type { Project, Skill, Achievement, Certification } from '../types';
 import { portfolioData } from '../Data/portfoliodata';
 // import image from '../assets/image.png';
 import profileImage from '../assets/profileImage.jpeg'
@@ -39,7 +39,7 @@ const Portfolio: React.FC = () => {
         const handleScroll = (): void => {
             setScrolled(window.scrollY > 50);
 
-            const sections = ['home', 'about','experience', 'projects', 'contact'];
+            const sections = ['home', 'about', 'experience', 'achievements', 'certifications', 'projects', 'contact'];
             const current = sections.find((section) => {
                 const element = document.getElementById(section);
                 if (element) {
@@ -85,7 +85,7 @@ const Portfolio: React.FC = () => {
 
                         {/* Desktop Navigation */}
                         <div className="hidden md:flex gap-6 lg:gap-8 items-center">
-                            {['home', 'about','experience', 'projects', 'contact'].map((section) => (
+                            {['home', 'about','experience', 'achievements', 'certifications', 'projects', 'contact'].map((section) => (
                                 <button
                                     key={section}
                                     onClick={() => scrollToSection(section)}
@@ -129,7 +129,7 @@ const Portfolio: React.FC = () => {
                     {/* Mobile Menu */}
                     {mobileMenuOpen && (
                         <div className={`md:hidden pb-4 ${darkMode ? 'bg-gray-900' : 'bg-white'}`}>
-                            {['home', 'about', 'projects', 'contact'].map((section) => (
+                            {['home', 'about', 'achievements', 'certifications', 'projects', 'contact'].map((section) => (
                                 <button
                                     key={section}
                                     onClick={() => scrollToSection(section)}
@@ -322,7 +322,6 @@ const Portfolio: React.FC = () => {
                 </div>
             </section>
 
-
             <section id="experience" className={`min-h-screen flex items-center ${darkMode ? 'bg-gray-900' : 'bg-white'}`}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-12 sm:py-20">
                     <div className="mb-12 sm:mb-16">
@@ -392,6 +391,107 @@ const Portfolio: React.FC = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Achievements Section */}
+            <section id="achievements" className={`${darkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-12 sm:py-20">
+                    <div className="mb-12 sm:mb-16">
+                        <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+                            <RiAwardLine size={24} className={`sm:w-8 sm:h-8 ${darkMode ? 'text-gray-400' : 'text-gray-900'}`} />
+                            <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold uppercase tracking-tight">Achievements</h2>
+                        </div>
+                        <div className={`h-1 w-16 sm:w-24 ${darkMode ? 'bg-gray-400' : 'bg-gray-900'}`}></div>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                        {portfolioData.achievements.map((achievement: Achievement) => (
+                            <div key={achievement.id} className="group">
+                                <div className={`border-2 ${darkMode ? 'border-gray-400 bg-gray-900 hover:bg-gray-500' : 'border-gray-900 bg-white hover:bg-gray-900'} hover:text-white p-5 sm:p-6 transition-all duration-300 h-full transform hover:-translate-y-1`}>
+                                    <div className="flex items-start justify-between mb-3 sm:mb-4">
+                                        <RiAwardLine size={36} className={`sm:w-10 sm:h-10 ${darkMode ? 'text-gray-400 group-hover:text-gray-200' : 'text-gray-200 group-hover:text-white'}`} />
+                                        {achievement.date && (
+                                            <span className="text-xs font-semibold uppercase tracking-wider opacity-70">
+                                                {achievement.date}
+                                            </span>
+                                        )}
+                                    </div>
+                                    <h4 className="text-lg sm:text-xl font-bold mb-2">{achievement.title}</h4>
+                                    {achievement.organization && (
+                                        <p className="text-xs sm:text-sm font-semibold mb-2 sm:mb-3 uppercase tracking-wider opacity-70">
+                                            {achievement.organization}
+                                        </p>
+                                    )}
+                                    <p className="text-xs sm:text-sm leading-relaxed opacity-90">{achievement.description}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Certifications Section */}
+            <section id="certifications" className={`${darkMode ? 'bg-gray-900' : 'bg-white'}`}>
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-12 sm:py-20">
+                    <div className="mb-12 sm:mb-16">
+                        <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+                            <RiVerifiedBadgeLine size={24} className={`sm:w-8 sm:h-8 ${darkMode ? 'text-gray-400' : 'text-gray-900'}`} />
+                            <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold uppercase tracking-tight">Certifications</h2>
+                        </div>
+                        <div className={`h-1 w-16 sm:w-24 ${darkMode ? 'bg-gray-400' : 'bg-gray-900'}`}></div>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                        {portfolioData.certifications.map((cert: Certification) => (
+                            <div key={cert.id} className="group">
+                                <div className={`border-2 ${darkMode ? 'border-gray-700 hover:border-gray-500' : 'border-gray-900 hover:border-gray-700'} transition-all duration-300 transform hover:-translate-y-1 h-full flex flex-col`}>
+                                    <div className={`p-5 sm:p-6 ${darkMode ? 'bg-gray-900' : 'bg-white'} flex flex-col flex-1`}>
+                                        <div className="flex items-start justify-between mb-4">
+                                            <div className={`w-12 h-12 sm:w-14 sm:h-14 border-2 ${darkMode ? 'border-gray-400' : 'border-gray-900'} flex items-center justify-center shrink-0 overflow-hidden`}>
+                                                {cert.image ? (
+                                                    <img src={cert.image} alt={cert.issuer} className="w-full h-full object-contain" />
+                                                ) : (
+                                                    <RiVerifiedBadgeLine size={24} className={darkMode ? 'text-gray-400' : 'text-gray-900'} />
+                                                )}
+                                            </div>
+                                            <span className={`text-xs font-semibold uppercase tracking-wider px-3 py-1 border shrink-0 ${darkMode ? 'border-gray-400 text-gray-400' : 'border-gray-900 text-gray-900'}`}>
+                                                {cert.date}
+                                            </span>
+                                        </div>
+
+                                        <h3 className="text-lg sm:text-xl font-bold mb-2">{cert.title}</h3>
+
+                                        <div className="flex items-center gap-2 mb-2">
+                                            <RiBuilding4Line size={16} className={darkMode ? 'text-gray-400' : 'text-gray-600'} />
+                                            <span className={`text-sm font-semibold ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                                                {cert.issuer}
+                                            </span>
+                                        </div>
+
+                                        {cert.credentialId && (
+                                            <p className={`text-xs ${darkMode ? 'text-gray-500' : 'text-gray-400'} mb-4 break-all`}>
+                                                ID: {cert.credentialId}
+                                            </p>
+                                        )}
+
+                                        {cert.credentialUrl && ( <a
+                                            
+                                                href={cert.credentialUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className={`mt-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 border-2 ${darkMode ? 'border-gray-400 text-gray-400 hover:bg-gray-400 hover:text-gray-900' : 'border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white'} transition-all duration-300 text-xs font-semibold uppercase tracking-wider`}
+                                            >
+                                                <RiExternalLinkLine size={14} />
+                                                View Credential
+                                            </a>
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+            
 
             {/* Projects Section */}
             <section id="projects" className={`min-h-screen flex items-center ${darkMode ? 'bg-gray-900' : 'bg-white'}`}>
@@ -532,7 +632,7 @@ const Portfolio: React.FC = () => {
                     </div>
                 </div>
             </section>
-        </div>
+        </div >
     );
 };
 
